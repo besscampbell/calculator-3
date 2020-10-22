@@ -1,27 +1,29 @@
 // Start of business logic
-const add = function(num1, num2) {
+function add(num1, num2) {
   return num1 + num2;
 };
 
-const subtract = function(num1, num2) {
+function subtract(num1, num2) {
   return num1 - num2;
 };
 
-const multiply = function(num1, num2) {
+function multiply(num1, num2) {
   return num1 - num2;
 };
 
-const divide = function(num1, num2) {
+function divide(num1, num2) {
   return num1 / num2;
 };
-// End of business lgic
+// End of business logic
 
 // Start of user interface logic
 $(document).ready(function() {
-  $("#form.add").submit(function(event) {
+  $("form#calculator").submit(function(event) {
+    event.preventDefault();
   const num1 = parseInt($("#add1").val());
   const num2 = parseInt($("#add2").val());
-  alert(add(num1, num2));
+  const result = add(num1, num2);
+  $("#output").text(result);
   });
 });
 
